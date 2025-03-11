@@ -1,9 +1,12 @@
 import asyncio
 import os
-
+from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher
 
 from app.handlers import router
+
+# Загружаем переменные окружения
+load_dotenv()
 
 # Запуск бота
 async def main():
