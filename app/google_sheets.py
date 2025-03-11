@@ -11,7 +11,7 @@ load_dotenv()
 def checking_for_an_admin():
     try:
         # Определяем область доступа, проводим аутентификацию, создаем клиент Google Sheets API
-        creds = Credentials.from_service_account_file(os.getenv("CREDENTIALS", "app/credentials.json"),
+        creds = Credentials.from_service_account_file(os.getenv("CREDENTIALS", "credentials.json"),
                                                       scopes=["https://www.googleapis.com/auth/spreadsheets"])
         
         client = gspread.authorize(creds)

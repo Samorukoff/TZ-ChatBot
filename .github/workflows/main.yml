@@ -47,7 +47,7 @@ jobs:
               git pull origin main
             fi
 
-      - name: Create .env file on server
+      - name: Create .env file and credentials.json on server
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.HOST }}
@@ -56,4 +56,4 @@ jobs:
           script: |
             cd /root/stazh/nikita2/
             echo "TOKEN=${{ secrets.TOKEN }}" > .env
-            echo "${{ secrets.CREDENTIALS }}" > app/credentials.json
+            echo "${{ secrets.CREDENTIALS }}" > credentials.json
