@@ -1,14 +1,20 @@
+import os
+from dotenv import load_dotenv 
+
 import gspread
 from google.oauth2.service_account import Credentials
+
+# Загружаем переменные окружения
+load_dotenv()
 
 # Функция подключения к Google API и получение списка ID администраторов
 def checking_for_an_admin():
     try:
         # Определяем область доступа, проводим аутентификацию, создаем клиент Google Sheets API
-        scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-        creds = Credentials.from_service_account_file("app/credentials.json", scopes=scopes)
+        creds = Credentials.from_service_account_file(os.getenv("CREDENTIALS", "app/credentials.json"),
+                                                      scopes=["https://www.googleapis.com/auth/spreadsheets"])
+        
         client = gspread.authorize(creds)
-
         # Выбираем нужную книгу
         sheet_id = "1l6L6NOjRruRjmvgv-tYqATkduQ4SXp4AE6pfpeTGKkA"
         workbook = client.open_by_key(sheet_id)
