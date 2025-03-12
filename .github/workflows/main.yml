@@ -42,7 +42,7 @@ jobs:
           script: |
             cd /root/stazh/nikita2/
             if [ ! -d ".git" ]; then
-              git clone https://github.com/NShmid/TaskBot.git .
+              git clone https://github.com/Samorukoff/TZ-ChatBot.git .
             else
               git pull origin main
             fi
