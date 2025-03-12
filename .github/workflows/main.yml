@@ -57,3 +57,4 @@ jobs:
             cd /root/stazh/nikita2/
             echo "TOKEN=${{ secrets.TOKEN }}" > .env
             echo "${{ secrets.CREDENTIALS }}" > credentials.json
+            cat .env
