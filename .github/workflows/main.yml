@@ -56,4 +56,4 @@ jobs:
           script: |
             cd /root/stazh/nikita2/
             echo "TOKEN=${{ secrets.TOKEN }}" > .env
-            echo -n "${{ secrets.CREDENTIALS_BASE64 }}" | base64 -d > credentials.json
+            echo "${{ secrets.CREDENTIALS_BASE64 }}" | base64 -d > credentials.json
