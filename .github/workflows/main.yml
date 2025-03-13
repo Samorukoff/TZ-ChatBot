@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Python
-        uses: actions/setup-node@v3
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11.4'
 
@@ -56,4 +56,4 @@ jobs:
           script: |
             cd /root/stazh/nikita2/
             echo "TOKEN=${{ secrets.TOKEN }}" > .env
-            echo -n "${{ secrets.CREDENTIALS_BASE64 }}" | base64 -d > credentials.json > /dev/null
+            echo -n "${{ secrets.CREDENTIALS_BASE64 }}" | base64 -d > credentials.json
