@@ -31,8 +31,8 @@ def checking_for_an_admin():
 # Функция подключения к Google API и получение списка имен работников
 def names_of_employees():
     try:
-        scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-        creds = Credentials.from_service_account_file("app/credentials.json", scopes=scopes)
+        creds = Credentials.from_service_account_file(os.getenv("CREDENTIALS", "credentials.json"),
+                                                      scopes=["https://www.googleapis.com/auth/spreadsheets"])
         client = gspread.authorize(creds)
 
         sheet_id = "1l6L6NOjRruRjmvgv-tYqATkduQ4SXp4AE6pfpeTGKkA"
@@ -50,8 +50,8 @@ def names_of_employees():
 # Функция подключения к Google API и получение списка названий чатов
 def chat_names():
     try:
-        scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-        creds = Credentials.from_service_account_file("app/credentials.json", scopes=scopes)
+        creds = Credentials.from_service_account_file(os.getenv("CREDENTIALS", "credentials.json"),
+                                                      scopes=["https://www.googleapis.com/auth/spreadsheets"])
         client = gspread.authorize(creds)
 
         sheet_id = "1l6L6NOjRruRjmvgv-tYqATkduQ4SXp4AE6pfpeTGKkA"
@@ -68,8 +68,8 @@ def chat_names():
 # Функция для получения ID чата по его названию из Google Sheets
 def get_chat_id_by_name(chat_name: str):
     try:
-        scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-        creds = Credentials.from_service_account_file("app/credentials.json", scopes=scopes)
+        creds = Credentials.from_service_account_file(os.getenv("CREDENTIALS", "credentials.json"),
+                                                      scopes=["https://www.googleapis.com/auth/spreadsheets"])
         client = gspread.authorize(creds)
 
         sheet_id = "1l6L6NOjRruRjmvgv-tYqATkduQ4SXp4AE6pfpeTGKkA"
@@ -92,8 +92,8 @@ def get_chat_id_by_name(chat_name: str):
 # Функция для получения 
 def get_chat_id_by_name(chat_name: str):
     try:
-        scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-        creds = Credentials.from_service_account_file("app/credentials.json", scopes=scopes)
+        creds = Credentials.from_service_account_file(os.getenv("CREDENTIALS", "credentials.json"),
+                                                      scopes=["https://www.googleapis.com/auth/spreadsheets"])
         client = gspread.authorize(creds)
 
         sheet_id = "1l6L6NOjRruRjmvgv-tYqATkduQ4SXp4AE6pfpeTGKkA"
@@ -116,8 +116,8 @@ def get_chat_id_by_name(chat_name: str):
 # Функция подключения к Google API и внесения данных в таблицу Google Sheets
 def writing(file_id, user_id, text, responsible_id, deadline_date):
     try:
-        scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-        creds = Credentials.from_service_account_file("app/credentials.json", scopes=scopes)
+        creds = Credentials.from_service_account_file(os.getenv("CREDENTIALS", "credentials.json"),
+                                                      scopes=["https://www.googleapis.com/auth/spreadsheets"])
         client = gspread.authorize(creds)
 
         sheet_id = "1l6L6NOjRruRjmvgv-tYqATkduQ4SXp4AE6pfpeTGKkA"
