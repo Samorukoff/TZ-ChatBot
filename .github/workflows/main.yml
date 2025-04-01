@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            mkdir -p /root/stazh/nikita2/
+            mkdir -p /root/stazh/nikita2/TZ-ChatBot
 
       - name: Clone or update repository on server
         uses: appleboy/ssh-action@v0.1.6
