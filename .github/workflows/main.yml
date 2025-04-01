@@ -54,6 +54,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /root/stazh/nikita2/
+            cd /root/stazh/nikita2/TZ-ChatBot
             echo "TOKEN=${{ secrets.TOKEN }}" > .env
             echo "${{ secrets.CREDENTIALS_BASE64 }}" | base64 -d > credentials.json
